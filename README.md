@@ -1,65 +1,54 @@
-# 🔮 3D Multi-Document Knowledge Chat
+# 🧠 RAG One
 
-A premium, local RAG application featuring a **3D Glassmorphism UI** (Streamlit) and a robust backend (FastAPI + ChromaDB + Ollama).
+The ultimate **Local AI Knowledge Engine**. Chat with your documents using a premium, privacy-first RAG pipeline.
 
-## Features
-- **3D UI**: Physics-based particle background, neon glassmorphism effects.
-- **Local RAG**: Runs entirely offline using Ollama and ChromaDB.
-- **Ingestion**: Supports PDF, DOCX, TXT with automatic chunking.
-- **Verification**: Citations provided for every answer.
+![RAG One UI](/api/placeholder/800/400) <!-- Add a screenshot later -->
 
-## Prerequisites
-1. **Ollama**: Must be installed and running.
-   ```bash
-   ollama serve
-   ollama pull phi3:medium
-   ```
+## ✨ Premium Features
+*   **🌑 Dark Black Glass UI**: A professional, distraction-free interface inspired by high-end SaaS tools.
+*   **🌊 Fluid Streaming**: Real-time token generation for a responsive chat experience.
+*   **🧠 Hybrid Search**: Combines **Vector Search** (ChromaDB) with **Cross-Encoder Reranking** (MS-MARCO) for pinpoint accuracy.
+*   **🗣️ Voice Mode**: Listen to AI responses directly in the browser.
+*   **⚡ Async Core**: Non-blocking architecture handles heavy indexing and thinking without freezing.
+*   **🔒 100% Local**: Powered by **Ollama**. No data leaves your machine.
 
-## Quick Start (Local)
+## 🚀 Quick Start
 
-1. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Prerequisites
+1.  **Ollama**: Must be installed and running.
+    ```bash
+    ollama serve
+    ollama pull gemma2:2b
+    ```
 
-2. **Start Backend**
-   ```bash
-   uvicorn backend.server:app --reload --port 8000
-   ```
+### Running Locally
+1.  **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3. **Start Frontend** (in a new terminal)
-   ```bash
-   streamlit run app.py
-   ```
-   Open `http://localhost:8501` to view the 3D UI.
+2.  **Start the Engine** (Backend + Frontend)
+    ```bash
+    # Terminal 1: Backend
+    uvicorn backend.server:app --port 8000
 
-## Docker Start
+    # Terminal 2: Frontend
+    streamlit run app.py
+    ```
 
+### Running with Docker 🐳
 ```bash
 docker-compose up --build
 ```
 Access the app at `http://localhost:8501`.
 
-## Configuration
-Edit `.env` or `backend/config.py` to change models or paths.
-Default LLM: `gemma2:2b` (can be changed in UI).
-Default Embedder: `all-MiniLM-L6-v2`.
+## 🛠️ Stack
+*   **Frontend**: Streamlit + Custom CSS + JS Particles
+*   **Backend**: FastAPI (Async)
+*   **Vector DB**: ChromaDB
+*   **Reranker**: `cross-encoder/ms-marco-MiniLM-L-6-v2`
+*   **LLM**: Ollama (`gemma2:2b`, `phi3`, etc.)
 
-## Troubleshooting
-
-### "Connection Refused"
-- Ensure Ollama is running: `ollama serve`.
-- Ensure Backend is running: `http://localhost:8000/docs`.
-
-### "Model not found"
-- Install the default model: `ollama pull gemma2:2b`.
-
-### "No text could be extracted" / 400 Error
-- The PDF is likely a **scanned image** or has no selectable text.
-- **Solution**: Use an online OCR tool (like Adobe Acrobat or smallpdf) to convert it to a "Searchable PDF" before uploading.
-- Text-based PDFs and `.docx` files work best.
-
-### Python Version Issues
-- This project requires **Python 3.10 - 3.12**.
-- Python 3.14 (experimental) is NOT supported due to missing binary wheels for `onnxruntime` and `scipy`.
+---
+*Built with ❤️ by your AI Copilot.*
 
