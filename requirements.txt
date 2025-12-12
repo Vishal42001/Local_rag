@@ -1,0 +1,13 @@
+streamlit>=1.33.0
+fastapi>=0.110.0
+uvicorn>=0.29.0
+chromadb>=0.4.24
+sentence-transformers>=2.6.0
+pypdf>=4.1.0
+python-docx>=1.1.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+ollama>=0.1.7
+requests>=2.31.0
+python-multipart>=0.0.9
+watchdog>=4.0.0

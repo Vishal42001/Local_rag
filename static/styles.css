@@ -1,0 +1,203 @@
+/* Dark Black Glass Premium Theme */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --bg-deep: #000000;
+    --glass-surface: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --accent-glow: rgba(255, 255, 255, 0.03);
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --primary-gradient: linear-gradient(135deg, #FFF 0%, #666 100%);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    /* Modern, geometric sans */
+    overflow-x: hidden;
+}
+
+/* Hide Default Header */
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+.stApp {
+    background: transparent;
+    /* Let particles show through */
+}
+
+/* Background Particles Layer */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 10%, #111 0%, #000 100%);
+}
+
+/* Glass Cards */
+.glass-card {
+    background: var(--glass-surface);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 24px;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: rgba(5, 5, 5, 0.8) !important;
+    backdrop-filter: blur(40px);
+    border-right: 1px solid var(--glass-border);
+}
+
+section[data-testid="stSidebar"] div {
+    color: var(--text-secondary);
+}
+
+/* Typography & Hero */
+h1 {
+    font-weight: 600;
+    letter-spacing: -1px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Chat Bubbles */
+.chat-message-user {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px 24px 4px 24px;
+    padding: 20px;
+    margin: 15px 0 15px auto;
+    max-width: 80%;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideInRight 0.3s ease-out;
+}
+
+.chat-message-bot {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px 24px 24px 4px;
+    padding: 20px;
+    margin: 15px auto 15px 0;
+    max-width: 85%;
+    backdrop-filter: blur(10px);
+    color: #dedede;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Input Area */
+.stTextInput>div>div {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.stTextInput>div>div:focus-within {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.stButton>button {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stButton>button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Citations */
+.citation-box {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.9em;
+}
